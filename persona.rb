@@ -1,9 +1,14 @@
 class Persona
+  require_relative 'formatear.rb'
+  extend Formato
+  attr_reader :nombre
   def initialize(nombre)
-   @nombre = formater! nombre
+    @nombre = Formato.formatear_nombre!(nombre)
   end
-  def registrar(nombre)
-
+  def registrar
+    clase = self.class.to_s + "s"
+    puts clase
+    puts self.nombre
   end
   def asignar(nombre,materia)
 
@@ -15,3 +20,5 @@ class Persona
 
   end
 end
+persona = Persona.new("pedro larios hinojoza")
+persona.registrar
