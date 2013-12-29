@@ -5,6 +5,7 @@ class Persona
   attr_reader :nombre
   def initialize(nombre)
     @nombre = Formato.formatear_nombre!(nombre)
+    registrar
   end
   def registrar
     clase = self.class.to_s + "s"
@@ -20,7 +21,8 @@ class Persona
   def ver_asignaciones!(nombre)
 
   end
+
 end
-persona = Persona.new("pedro larios hinojoza")
-persona.registrar
-puts $Registro.to_s
+#persona = Persona.new("pedro larios hinojoza")
+#persona.registrar
+#puts $Registro.to_s

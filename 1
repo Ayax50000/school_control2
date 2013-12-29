@@ -29,22 +29,11 @@ class Materia
     end
   end
 
-  def self.ver_materias!
+   def self.ver_materias!
     puts $Registro.keys
   end
 
   private
-
-  def tiene_alumno?(alumno)
-    asignado = false
-    $Registro[@materia][:Alumnos].each do |estudiante|
-      if estudiante[:Nombre] == alumno then
-        asignado = true
-      end
-    end
-    asignado
-  end
-
   def existe_materia?
     respuesta = false
     respuesta = true if $Registro[@materia] != nil
