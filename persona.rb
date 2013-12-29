@@ -1,4 +1,5 @@
 class Persona
+  require_relative 'materia.rb'
   require_relative 'formatear.rb'
   extend Formato
   attr_reader :nombre
@@ -22,3 +23,4 @@ class Persona
 end
 persona = Persona.new("pedro larios hinojoza")
 persona.registrar
+puts $Registro.to_s
