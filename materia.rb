@@ -6,8 +6,8 @@ class Materia
                :Matematicas=>{:Maestros=>["Olivia Martinez", "Juan Perez"],
                           :Alumnos =>[{:Nombre=>"Pedro",:Calificacion=>0.0}]},
                :BasesDeDatos=>{:Maestros=>["Olivia Martinez"],
-                          :Alumnos =>[{:Nombre=>"Juan",:Calificacion=>0.0}]}}
-  $Registrados = {"Maestros" => ["Juan Carlos Hernandez","Juan Perez","Olivia Martinez"], "Alumnos" => []}
+                          :Alumnos =>[{:Nombre=>"",:Calificacion=>0.0}]}}
+  $Registrados = {"Maestros" => ["Juan Carlos Hernandez","Juan Perez","Olivia Martinez"], "Alumnos" => ["Pedro"]}
   def initialize(materia)
     @materia = Formato.formatear_materia! materia
   end
@@ -34,8 +34,6 @@ class Materia
     puts $Registro.keys
   end
 
-  private
-
   def tiene_alumno?(alumno)
     asignado = false
     $Registro[@materia][:Alumnos].each do |estudiante|
@@ -52,10 +50,18 @@ class Materia
     respuesta
   end
 
+  def ver_calificacion_de nombre
+    $Registro[@materia][:Alumnos].each do |alumno|
+      if alumno[:Nombre] = nombre
+        puts alumno[:Calificacion]
+      end
+    end
+  end
+
 end
 
-materia = Materia.new("aritmetica")
-materia.registrar
-Materia.ver_materias!
-materia.quien_imparte?
+#materia = Materia.new("aritmetica")
+#materia.registrar
+#Materia.ver_materias!
+#materia.quien_imparte?
 #puts materia.existe_materia?

@@ -10,11 +10,21 @@ class Alumno < Persona
   end
 
   def ver_calificaciones
-
+    if $Registrados["Alumnos"].include? @nombre.chop
+      puts "escriba la materia de la que quiere ver calificaciones?"
+      Materia.ver_materias!
+      subject = gets
+      materia = Materia.new(subject)
+      if materia.tiene_alumno? @nombre.chop
+        materia.ver_calificacion_de @nombre.chop
+      end
+    end
   end
 
   def calificar_materia
 
   end
 end
-juan = Alumno.new("Juan diego larios soto")
+#juan = Alumno.new("pedro")
+#juan.ver_alumnos
+#juan.ver_calificaciones
