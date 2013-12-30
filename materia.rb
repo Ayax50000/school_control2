@@ -8,6 +8,7 @@ class Materia
                :BasesDeDatos=>{:Maestros=>["Olivia Martinez"],
                           :Alumnos =>[{:Nombre=>"",:Calificacion=>0.0}]}}
   $Registrados = {"Maestros" => ["Juan Carlos Hernandez","Juan Perez","Olivia Martinez"], "Alumnos" => ["Pedro"]}
+  attr_reader :materia
   def initialize(materia)
     @materia = Formato.formatear_materia! materia
   end

@@ -9,6 +9,7 @@ class Alumno < Persona
     puts $Registrados["Alumnos"]
   end
 
+
   def ver_calificaciones
     if $Registrados["Alumnos"].include? @nombre.chop
       puts "con palabras separadas escriba la materia de la que quiere ver calificaciones"
@@ -54,3 +55,4 @@ juan = Alumno.new("pedro")
 #juan.ver_alumnos
 juan.ver_calificaciones
 juan.calificar_materia
+juan.asignar
