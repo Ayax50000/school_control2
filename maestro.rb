@@ -5,7 +5,7 @@ class Maestro < Persona
     super(nombre)
   end
 
-  def ver_maestros
+  def self.ver_maestros
     puts $Registrados["Maestros"]
   end
 

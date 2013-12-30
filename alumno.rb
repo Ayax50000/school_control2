@@ -5,7 +5,7 @@ class Alumno < Persona
     super(nombre)
   end
 
-  def ver_alumnos
+  def self.ver_alumnos
     puts $Registrados["Alumnos"]
   end
 
