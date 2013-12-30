@@ -39,10 +39,11 @@ class Alumno < Persona
       subject = gets
       materia = Materia.new(subject)
       if materia.existe_materia?
-        if materia.tiene_alumno? @nombre.chop
+        if materia.tiene_alumno? @nombre
           puts "escriba la calificacion"
           calificacion = gets.to_f
           materia.calificar(@nombre.chop,calificacion)
+          puts "#{calificacion} asignado a #{@nombre} en #{subject}"
         else
           puts "el alumno #{@nombre} no esta asignado a #{subject}"
         end
