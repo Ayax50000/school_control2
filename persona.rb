@@ -9,9 +9,9 @@ class Persona
   end
   def registrar
     if $Registrados[@clase].include? @nombre
-      puts "el alumno #{@nombre} ya esta registrado"
+      puts " #{@nombre} ya esta registrado en #{@clase}"
     else
-       $Registrados[@clase] << @nombre
+       $Registrados[@clase] << @nombre.chop
        puts "#{@nombre} fue registrado correctamente"
     end
   end
@@ -24,7 +24,7 @@ class Persona
       if subject.existe_materia? then
 
         if @clase == "Maestros" then
-          if $Registro[subject.materia][:Maestros].inlude? @nombre then
+          if $Registro[subject.materia][:Maestros].include? @nombre then
             puts "ya se enuentra asignado"
           else
             $Registro[subject.materia][:Maestros] << @nombre
@@ -58,6 +58,3 @@ class Persona
   end
 
 end
-#persona = Persona.new("pedro larios hinojoza")
-#persona.registrar
-#puts $Registro.to_s

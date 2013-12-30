@@ -10,5 +10,3 @@ class Maestro < Persona
   end
 
 end
-juan = Maestro.new("Juan diego larios soto")
-juan.registrar

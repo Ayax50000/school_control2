@@ -14,7 +14,7 @@ class Alumno < Persona
     if $Registrados["Alumnos"].include? @nombre.chop
       puts "con palabras separadas escriba la materia de la que quiere ver calificaciones"
       Materia.ver_materias!
-       3.times {puts ""}
+      3.times {puts ""}
       subject = gets
       materia = Materia.new(subject)
       if materia.existe_materia?
@@ -26,6 +26,8 @@ class Alumno < Persona
       else
         puts "la materia #{subject} no existe"
       end
+    else
+      puts "#{@nombre} no se encuentra registrado"
     end
   end
 
@@ -51,8 +53,3 @@ class Alumno < Persona
   end
 
 end
-juan = Alumno.new("pedro")
-#juan.ver_alumnos
-juan.ver_calificaciones
-juan.calificar_materia
-juan.asignar

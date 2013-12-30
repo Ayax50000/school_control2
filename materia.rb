@@ -71,9 +71,3 @@ class Materia
 
 
 end
-
-#materia = Materia.new("aritmetica")
-#materia.registrar
-#Materia.ver_materias!
-#materia.quien_imparte?
-#puts materia.existe_materia?
