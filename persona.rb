@@ -53,8 +53,4 @@ class Persona
     end
   end
 
-  def ver_asignaciones!(nombre)
-
-  end
-
 end
