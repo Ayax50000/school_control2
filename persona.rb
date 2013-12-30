@@ -5,19 +5,21 @@ class Persona
   attr_reader :nombre
   def initialize(nombre)
     @nombre = Formato.formatear_nombre!(nombre)
-    registrar
   end
   def registrar
     clase = self.class.to_s + "s"
-    puts clase
-    puts self.nombre
+    if $Registrados[clase].include? @nombre
+      puts "el alumno #{@nombre} ya esta registrado"
+    else
+       $Registrados[clase] << @nombre
+       puts "#{@nombre} fue registrado correctamente"
+    end
   end
+
   def asignar(nombre,materia)
 
   end
-  def existe?(nombre)
 
-  end
   def ver_asignaciones!(nombre)
 
   end

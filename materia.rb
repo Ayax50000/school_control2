@@ -7,6 +7,7 @@ class Materia
                           :Alumnos =>[{:Nombre=>"Pedro",:Calificacion=>0.0}]},
                :BasesDeDatos=>{:Maestros=>["Olivia Martinez"],
                           :Alumnos =>[{:Nombre=>"Juan",:Calificacion=>0.0}]}}
+  $Registrados = {"Maestros" => ["Juan Carlos Hernandez","Juan Perez","Olivia Martinez"], "Alumnos" => []}
   def initialize(materia)
     @materia = Formato.formatear_materia! materia
   end
