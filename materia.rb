@@ -58,6 +58,17 @@ class Materia
     end
   end
 
+  def calificar(nombre,calificacion)
+    limite = $Registro[@materia][:Alumnos].size
+      limite.times do |indice|
+        if $Registro[@materia][:Alumnos][indice][:Nombre] == nombre
+           $Registro[@materia][:Alumnos][indice][:Calificacion] = calificacion
+           puts "#{calificacion} correctamente asignado a #{nombre} en #{@materia}"
+        end
+      end
+  end
+
+
 end
 
 #materia = Materia.new("aritmetica")
