@@ -1,14 +1,16 @@
-class Teacher
+require_relative 'School.rb'
 
-  @@teachers = { 1=> "Juan Perez", 2=> "Olivia Mtz", 3 => "Juan Carlos Hernandez"}
+class Teacher < School
+
+  @@current_id = 4
 
   def initialize
   end
 
   def self.all
-    @@teaches.each do |teacher|
-      puts "#{teachers[0]}  #{teachers[1]}"
-    end
+    super(:teachers)
   end
-  :w
+
 end
+
+Teacher.all

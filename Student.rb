@@ -1,21 +1,18 @@
-class Student
+require_relative 'School.rb'
+
+class Student < School
 
   @@current_id = 3
-  @@students = {1 => "roberto velazco", 2 => "rene estrada hernandez"}
 
   def initialize(name)
     @name = name
   end
 
   def self.all
-    @@students.each do |record|
-      puts "#{record[0]}  #{record[1]}"
-    end
+    super(:students)
   end
 
   def add
-    @@students[@@current_id] = @name
-    @@current_id += 1
   end
 
   def assign

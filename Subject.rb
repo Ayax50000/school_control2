@@ -1,7 +1,7 @@
-class Subject
+require_relative 'School.rb'
 
-  @@record = { 1 => { teachers: [], students: { 1 => 10.0, } } }
-  @@subjects = { 1=>"PHYSICAL", 2=>"MATHEMATICS", 3=>"DATABASES"}
+class Subject < School
+
   @@current_id = 3
 
   def initialize
@@ -9,9 +9,7 @@ class Subject
   end
 
   def self.all
-    @@subjects.each do |subject|
-      puts "#{subject[0]}  #{subject[1]}"
-    end
+    super(:subjects)
   end
 
 end
