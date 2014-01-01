@@ -18,10 +18,6 @@ class Student < School
     end
   end
 
-
-  def assign
-
-  end
 end
 
 Student.all

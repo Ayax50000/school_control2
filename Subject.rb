@@ -29,6 +29,17 @@ class Subject < School
       end
     end
   end
+
+  def assign_student(id,id_student,score = 0.0)
+    @@matches[id][:students][id_team] = score
+    success
+  end
+
+  def assign_teacher(id,id_teacher)
+    @@matches[id][:teachers] << id_teacher
+    success
+  end
+
 end
 Subject.all
 subject = Subject.new("databases")
