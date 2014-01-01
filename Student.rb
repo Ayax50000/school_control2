@@ -1,21 +1,25 @@
 class Student
 
   @@current_id = 3
-  @@record = {1 => "roberto velazco", 2 => "rene estrada hernandez"}
+  @@students = {1 => "roberto velazco", 2 => "rene estrada hernandez"}
 
   def initialize(name)
     @name = name
   end
 
   def self.all
-    @@record.each do |record|
+    @@students.each do |record|
       puts "#{record[0]}  #{record[1]}"
     end
   end
 
   def add
-    @@record[@@current_id] = @name
+    @@students[@@current_id] = @name
     @@current_id += 1
+  end
+
+  def assign
+
   end
 end
 
