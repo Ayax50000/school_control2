@@ -5,7 +5,7 @@ class Student < School
   @@current_id = 3
 
   def initialize(name)
-    @name = name
+    @name = name.upcase
   end
 
   def self.all
@@ -13,7 +13,11 @@ class Student < School
   end
 
   def add
+    if super(:students,@name,@@current_id)
+      @@current_id += 1
+    end
   end
+
 
   def assign
 
