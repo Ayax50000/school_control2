@@ -4,7 +4,9 @@ class School
             students:{1=>"ROBERTO VELAZCO",2 => "RENE ESTRADA HERNANDEZ"},
             subjects:{ 1=>"PHYSICAL", 2=>"MATHEMATICS", 3=>"DATABASES"}}
 
-  @@matches = { 1 => { teachers: [], students: { 1 => 10.0, } } }
+  @@matches = { 1 => { teachers: [1,3], students: { 1 => 10.0 } },
+                2 => { teachers: [1,2], students: { 2 => 10.0 } },
+                3 => { teachers: [2], students: { 3 => 10.0 } }}
 
   def self.all(what)
     @@record[what].each do |item|
