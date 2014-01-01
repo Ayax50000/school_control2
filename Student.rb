@@ -12,6 +12,14 @@ class Student
       puts "#{record[0]}  #{record[1]}"
     end
   end
+
+  def add
+    @@record[@@current_id] = @name
+    @@current_id += 1
+  end
 end
 
-puts Student.all
+Student.all
+student = Student.new("Jose de Jesus")
+student.add
+Student.all
