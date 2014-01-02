@@ -27,14 +27,14 @@ class Subject < School
     end
   end
 
-  def assign_student(id,id_student,score = 0.0)
+  def self.assign_student(id,id_student,score = 0.0)
     @@matches[id][:students][id_team] = score
-    success
+    School.success
   end
 
-  def assign_teacher(id,id_teacher)
+  def self.assign_teacher(id,id_teacher)
     @@matches[id][:teachers] << id_teacher
-    success
+    School.success
   end
 
   def student_assignations(id)

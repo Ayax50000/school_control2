@@ -14,11 +14,11 @@ class School
     end
   end
 
-  def success
+  def self.success
     puts "Successful Operation"
   end
 
-  def failure
+  def self.failure
     puts "Operation Failure"
   end
 
@@ -29,9 +29,9 @@ class School
     end
     if permit == true
       @@record[team][id] = name
-      success
+      School.success
     else
-      failure
+      School.failure
     end
     permit
   end
