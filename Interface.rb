@@ -2,6 +2,12 @@ require_relative 'Teacher.rb'
 require_relative 'Student.rb'
 require_relative 'Subject.rb'
 
+class String
+def to_id
+  self.chomp.to_i
+end
+end
+
 def interface
     puts "What do you like to do
           1) see teachers
@@ -17,6 +23,7 @@ def interface
           11) see student score by subject
           0) exit"
 end
+
 def go_back
   system 'clear'
   puts "\n" * 6
@@ -41,15 +48,15 @@ end
       when 3 then go_back do
           Teacher.all
           puts " select the number of the teacher"
-          id_teacher = gets.chomp.to_i
+          id_teacher = gets.to_id
           puts " please select the number of subject"
           Subject.all
-          Subject.assign_teacher(gets.chomp.to_i,id_teacher)
+          Subject.assign_teacher(gets.to_id,id_teacher)
         end
       when 4 then go_back do
           Subject.all
           puts "Please select the subject number do you like"
-          Subject.all_teachers(gets.chomp.to_i)
+          Subject.all_teachers(gets.to_id)
         end
       when 5 then go_back do
           puts "What is the name of the new subject"
@@ -65,30 +72,30 @@ end
       when 8 then go_back do
           Student.all
           puts "Please select the number of student you want to assign"
-          id_student = gets.chomp.to_i
+          id_student = gets.to_id
           Subject.all
           puts "Please select the subject target"
-          Subject.assign_student(gets.chomp.to_i,id_student)
+          Subject.assign_student(gets.to_id,id_student)
         end
       when 9 then go_back { Student.all }
       when 10 then go_back do
           Student.all
           puts "Please select the number of student you want to assign"
-          id_student = gets.chomp.to_i
+          id_student = gets.to_id
           Subject.student_assignations(id_student)
           puts "Please select the subject target"
-          subject = gets.chomp.to_i
+          subject = gets.to_id
           puts "What is the score"
-          score = gets.chomp.to_i
+          score = gets.to_id
           Subject.assign_student(subject,id_student,score)
         end
       when 11 then go_back do
           Student.all
           puts "Please select the number of student you want to see the score"
-          id_student = gets.chomp.to_i
-          Subject.student_assignations.(id_student)
+          id_student = gets.to_id
+          Subject.student_assignations(id_student)
           puts "Please select the subject"
-          Subject.assign_score(gets.chomp.to_i,id_student)
+          Subject.student_score(gets.to_id,id_student)
         end
     end
   end

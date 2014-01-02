@@ -46,7 +46,7 @@ class Subject < School
     end
   end
 
-  def student_score(id,id_student)
+  def self.student_score(id,id_student)
     puts @@matches[id][:students][id_student]
   end
 
