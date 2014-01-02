@@ -3,13 +3,15 @@ require_relative 'Student.rb'
 require_relative 'Subject.rb'
 
 class String
-def to_id
-  self.chomp.to_i
-end
+
+  def to_id
+    self.chomp.to_i
+  end
+
 end
 
 def interface
-    puts "What do you like to do
+  puts "What do you like to do
           1) see teachers
           2) add teachers
           3) assign teacher
